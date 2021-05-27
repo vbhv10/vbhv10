@@ -23,3 +23,37 @@ body {
   background-color: white;
   border-radius: 4px;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.slick-slide div {
+  outline: none;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+.slick-slide {
+  height: inherit !important;
+}
+
+
+img {
+  -webkit-user-drag: none;
+}
+
+::-moz-selection {
+  color: white;
+  background: #601eec;
+  text-shadow: none;
+}
+::selection {
+  color: white;
+  background: #601eec;
+  text-shadow: none;
+}
