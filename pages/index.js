@@ -430,7 +430,32 @@ export default function Home() {
                 <span>Vaibhav</span> <span>Mahajan</span>
               </h1>
             </div>
-            <img className={classes.personImg} src="/person.svg" alt="" />
+            <img
+              className={classes.personImg}
+              src="/images/profile-pic.png"
+              alt=""
+            />
+          </div>
+
+          <div className={classes.about} id="about">
+            <div className={classes.aboutTextDiv}>
+              <p className={classes.sectionHeading}>About</p>
+              <h2 className={classes.aboutHead}>
+                <span>Hello, I am Vaibhav Mahajan,</span>{" "}
+                <span>I am UI/UX designer.</span>
+              </h2>
+              <p className={classes.aboutDescription}>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Laboriosam repudiandae nisi molestias fugit optio quos eligendi
+                dignissimos possimus ipsa atque, dicta dolorem voluptatibus
+                rerum sequi similique nostrum, est enim dolor?
+              </p>
+            </div>
+            <img
+              className={classes.personImg}
+              src="/images/profile-pic.png"
+              alt=""
+            />
           </div>
 
           <div id="work">
@@ -463,23 +488,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className={classes.about} id="about">
-            <div className={classes.aboutTextDiv}>
-              <p className={classes.sectionHeading}>About</p>
-              <h2 className={classes.aboutHead}>
-                <span>Hello, I am Vaibhav Mahajan,</span>{" "}
-                <span>I am UI/UX designer.</span>
-              </h2>
-              <p className={classes.aboutDescription}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam repudiandae nisi molestias fugit optio quos eligendi
-                dignissimos possimus ipsa atque, dicta dolorem voluptatibus
-                rerum sequi similique nostrum, est enim dolor?
-              </p>
-            </div>
-            <img className={classes.personImg} src="/person.svg" alt="" />
           </div>
 
           <div className={classes.contact} id="contact">

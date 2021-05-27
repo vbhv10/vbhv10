@@ -94,6 +94,7 @@ const links = [
   { to: "work", name: "Work", offset: -95 },
   { to: "about", name: "About", offset: -105 },
   { to: "contact", name: "Contact", offset: -100 },
+  { to: "project", name: "Project", offset: -100 },
 ];
 
 export default function Navbar() {
