@@ -33,6 +33,13 @@ const useStyles = makeStyles((theme) => ({
   },
   logoImg: {
     marginRight: "auto",
+    fontFamily: "Alex Brush",
+    fontSize: "32px",
+    fontStyle: "normal",
+    fontWeight: 400,
+    lineHeight: "40px",
+    letterSpacing: "0.1em",
+    textAlign: "left",
   },
   link: {
     color: "white",
@@ -91,10 +98,10 @@ const useStyles = makeStyles((theme) => ({
 
 const links = [
   { to: "home", name: "Home", offset: -120 },
-  { to: "work", name: "Work", offset: -95 },
   { to: "about", name: "About", offset: -105 },
+  { to: "work", name: "Work", offset: -95 },
   { to: "contact", name: "Contact", offset: -100 },
-  { to: "project", name: "Project", offset: -100 },
+  { to: "project", name: "Project", offset: -65 },
 ];
 
 export default function Navbar() {
@@ -111,7 +118,7 @@ export default function Navbar() {
       <Head>Navbar</Head>
 
       <header className={classes.root}>
-        <img className={classes.logoImg} src="/logo.svg" alt="" />
+        <h4 className={classes.logoImg}>Vaibhav Mahajan</h4>
         {isMobile ? (
           <IconButton onClick={openSideDrawer(true)} style={{ color: "white" }}>
             <MenuIcon style={{ fontSize: "2rem" }} />

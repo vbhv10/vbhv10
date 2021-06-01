@@ -46,34 +46,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const headlineData = [
-  "MARS : Modern Analytics and Reporting System ",
-
-  "DCT DigiValet Setup",
-  " DVU DigiValet Utilities",
-  "Digimailer",
-  "API Gateway",
+const carouselData = [
+  {
+    images: {
+      api: "/images/API Gateway.jpg",
+      DCT: "/images/DCT.jpg",
+      DVU: "/images/DVU.jpg",
+      Mars: "/images/MARS.jpg",
+      snap: "/images/Snap-Sponsor.jpg",
+    },
+    headlines: {
+      Mars: "Modern Analytics and Reporting System (MARS)",
+      DCT: "DigiValet Setup (DCT)",
+      DVU: "DigiValet Utilities",
+      Api: "API Gateway",
+      Snap: "Snap-Sponsor",
+    },
+  },
 ];
-
-const marsTech = [
-  " ELK stack",
-  "BigQuery Library",
-  "MariaDB",
-  "Celery",
-  " Django",
-];
-const dctTech = [
-  " DCT Cloud",
-  " Client (on sites)",
-  "DRF",
-  "Celery",
-  "Docker",
-  "sqlite",
-  " shutil",
-];
-const dvuTech = ["paramiko", "pdfkit", "sshtunnel", "DRF"];
-const apiFatewayTech = ["loki", "Grafana."];
-const SnapSponsorTech = ["JSON APIs", "MongoDB", "MongoDB Cloud", "Firebase"];
 
 export default function project() {
   const classes = useStyles();
@@ -83,36 +73,22 @@ export default function project() {
       <Head>project</Head>
 
       <div className={classes.root}>
-        <section id="project">
-          <div>
-            <img
-              src="/images/API Gateway.jpg"
-              alt="api"
-              className={classes.mainImg}
-            />
+        <section>
+          {carouselData.map((item, i) => (
+            <>
+              <img src="/images/API Gateway.jpg" alt="#" />
 
-            <h1 className={classes.heading}>{headlineData[0]}</h1>
+              <h1 className={classes.heading}>Headline</h1>
 
-            <span className={classes.span}>About</span>
-            <p className={classes.paragraph}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-              totam aperiam sapiente accusamus ut magnam. Asperiores
-              necessitatibus placeat modi facere id, cupiditate maxime
-              voluptatem ullam aperiam adipisci! Ratione, facere pariatur?
-            </p>
-            <p className={classes.paragraph}>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi
-              totam aperiam sapiente accusamus ut magnam. Asperiores
-              necessitatibus placeat modi facere id, cupiditate maxime
-              voluptatem ullam aperiam adipisci! Ratione, facere pariatur?
-            </p>
-            <span className={classes.span}>Technology Used</span>
-            <p style={{ color: "#FFFFF" }}>{marsTech[0]}</p>
-            <p style={{ color: "#FFFFF" }}>{marsTech[1]}</p>
-            <p style={{ color: "#FFFFF" }}>{marsTech[2]}</p>
-            <p style={{ color: "#FFFFF" }}>{marsTech[4]}</p>
-            <p style={{ color: "#FFFFF" }}>{marsTech[0]}</p>
-          </div>
+              <p className={classes.paragraph}>Discription</p>
+
+              <h4>Technology Used</h4>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+              <p>1</p>
+            </>
+          ))}
         </section>
       </div>
     </>

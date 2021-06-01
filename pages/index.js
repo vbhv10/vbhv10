@@ -63,8 +63,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textImgDiv: {
     display: "grid",
-    gridTemplateColumns: "5fr 2fr",
-    columnGap: "2rem",
+    gridTemplateColumns: "1fr",
     [theme.breakpoints.down(790)]: {
       gridTemplateColumns: "1fr",
     },
@@ -78,10 +77,11 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   personImg: {
-    width: "100%",
+    width: "70%",
     alignSelf: "center",
     [theme.breakpoints.down(790)]: {
-      display: "none",
+      width: "70%",
+      height: "auto",
     },
   },
   heading: {
@@ -430,14 +430,14 @@ export default function Home() {
                 <span>Vaibhav</span> <span>Mahajan</span>
               </h1>
             </div>
+          </div>
+
+          <div className={classes.about} id="about">
             <img
               className={classes.personImg}
               src="/images/profile-pic.png"
               alt=""
             />
-          </div>
-
-          <div className={classes.about} id="about">
             <div className={classes.aboutTextDiv}>
               <p className={classes.sectionHeading}>About</p>
               <h2 className={classes.aboutHead}>
@@ -451,11 +451,6 @@ export default function Home() {
                 rerum sequi similique nostrum, est enim dolor?
               </p>
             </div>
-            <img
-              className={classes.personImg}
-              src="/images/profile-pic.png"
-              alt=""
-            />
           </div>
 
           <div id="work">
