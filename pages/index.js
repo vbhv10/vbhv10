@@ -1,8 +1,23 @@
 import { Box, makeStyles, styled } from "@material-ui/core";
 import clsx from "clsx";
 import Head from "next/head";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import { useState } from "react";
 import Navbar from "../src/Header/Navbar";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  swipeToSlide: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -352,7 +367,89 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
     marginTop: "1rem",
   },
+  section: {
+    padding: 10,
+  },
+  title: {
+    fontFamily: "Poppins",
+    fontSize: "2rem",
+    fontStyle: "normal",
+    fontWeight: 600,
+
+    letterSpacing: "0.1em",
+    textAlign: "left",
+  },
+  projectImg2: {
+    padding: 10,
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginLeft: "auto",
+    transition: "width 0.3s",
+    [theme.breakpoints.down(500)]: {
+      width: "100%",
+    },
+  },
+  ul: {
+    color: "white",
+    margin: 20,
+    lineHeight: 1.8,
+  },
+  lists: {
+    color: "white",
+  },
 }));
+
+const projectData = [
+  {
+    Id: 1,
+    image: "/images/API Gateway.jpg",
+    title: "API Gateway",
+
+    p1: "Currently developing and implementing API gateway using kong for Digivalet.",
+
+    p2: "It have prometheus alerting with system service and logging over loki and visualizing with Grafana.",
+  },
+  {
+    Id: 2,
+    image: "/images/DCT.jpg",
+    title: "DCT (DigiValet Setup)",
+
+    p1: "Worked on Digivalet's internal system which configures individual Hotels. ",
+    p2: "It has 2 instances, DCT Cloud and Client (on sites).",
+    p3: "Used DRF, Celery, Docker and python modules like requests, zipfile, sqlite, shutil etc.",
+  },
+  {
+    Id: 3,
+    image: "/images/DVU.jpg",
+    title: "DVU (DigiValet Utilities) ",
+
+    p1: "Created Utilities tool for Digivalet in with transfer data between remote servers, Server verification, iOS utility.",
+
+    p2: "Used paramiko, pdfkit, sshtunnel and celery modules over Django Framework.",
+
+    p3: "Single Handedly architected custom utility system using DRF which is responsible for automating the tasks.",
+  },
+  {
+    Id: 4,
+    image: "/images/MARS.jpg",
+    title: "MARS (Modern Analytics and Reporting System)",
+
+    p1: "Created a system for analysis of the data based on logs,  database, navigation data of iPad on firebase ",
+    p2: "Used of ELK stack, BigQuery Library, MariaDB and used   Celery for Cron jobs on Django Framework.",
+    p3: "Used Docker for containerizing system.",
+  },
+  {
+    Id: 5,
+    image: "/images/Snap-Sponsor.jpg",
+    title: "Snap-Sponsor",
+    p1: "JSON APIs for data transmission and session management.",
+
+    p2: "The database we are using is MongoDB and MongoDB cloud for storage and Firebase for push notification in iOS.",
+
+    p3: "Implemented system in which the user will see the posts according to tags he/she follow and tags which post have with best match. ",
+  },
+];
 
 const projects = [
   {
@@ -490,6 +587,28 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <section className={classes.section} id="project">
+            <Slider {...settings}>
+              {projectData.map(({ image, title, Id, p1, p2, p3 }) => (
+                <>
+                  <div>
+                    <img
+                      className={classes.projectImg2}
+                      style={{ width: "100%" }}
+                      src={image}
+                      alt="#"
+                    />
+                    <h4 className={classes.title}>{title}</h4>
+                    <ul className={classes.ul}>
+                      <li className={classes.lists}>{p1}</li>
+                      <li className={classes.lists}>{p2}</li>
+                      <li className={classes.lists}>{p3}</li>
+                    </ul>
+                  </div>
+                </>
+              ))}
+            </Slider>
+          </section>
 
           <div className={classes.contact} id="contact">
             <p className={classes.sectionHeading}>Contact</p>
