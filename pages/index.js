@@ -453,6 +453,12 @@ const projectData = [
 
 const projects = [
   {
+    title: "DVU",
+    work: "DigiValet Utilities",
+    image: "/images/DVU.jpg",
+  },
+
+  {
     title: "API",
     work: "Gateway",
     image: "/images/API Gateway.jpg",
@@ -462,11 +468,7 @@ const projects = [
     work: "DigiValet Setup",
     image: "/images/DCT.jpg",
   },
-  {
-    title: "DVU",
-    work: "DigiValet Utilities",
-    image: "/images/DVU.jpg",
-  },
+
   {
     title: "MARS",
     work: "Modern Analytics and Reporting System)",
@@ -498,7 +500,7 @@ export default function Home() {
     const subject = "Mail via website.";
     const body = `Name: ${name}          Email: ${email}          Message: ${message}`;
     window.open(
-      `mailto:vaibhav@gmail.com?subject=${subject}&body=${body}`,
+      `mailto:i.vaibhavmahajan@gmail.com?subject=${subject}&body=${body}`,
       "_self"
     );
 
