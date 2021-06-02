@@ -82,6 +82,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down(790)]: {
       width: "70%",
       height: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
+      margin: "1.2rem",
     },
   },
   heading: {
@@ -353,29 +356,29 @@ const useStyles = makeStyles((theme) => ({
 
 const projects = [
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/foodApp.svg",
+    title: "API",
+    work: "Gateway",
+    image: "/images/API Gateway.jpg",
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/furnitureApp.svg",
+    title: "DCT",
+    work: "DigiValet Setup",
+    image: "/images/DCT.jpg",
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/techLandingPage.svg",
+    title: "DVU",
+    work: "DigiValet Utilities",
+    image: "/images/DVU.jpg",
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/foodApp.svg",
+    title: "MARS",
+    work: "Modern Analytics and Reporting System)",
+    image: "/images/MARS.jpg",
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/furnitureApp.svg",
+    title: "Snap-Sponsor",
+    work: "",
+    image: "/images/Snap-Sponsor.jpg",
   },
 ];
 
@@ -445,10 +448,13 @@ export default function Home() {
                 <span>I am UI/UX designer.</span>
               </h2>
               <p className={classes.aboutDescription}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam repudiandae nisi molestias fugit optio quos eligendi
-                dignissimos possimus ipsa atque, dicta dolorem voluptatibus
-                rerum sequi similique nostrum, est enim dolor?
+                Engineering professional with experience in Python development.
+                Mastering/Leading in the development of backend applications
+                /tools using Python. Worked on several python framework like
+                Django and libraries like NumPy, Pandas, Paramiko, Celery,
+                Elasticsearch etc. Having good experience in Docker. I am
+                interested and exploring the field of machine learning and
+                looking forward to grow myself along with the company.
               </p>
             </div>
           </div>
