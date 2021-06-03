@@ -152,6 +152,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+
   projectTextDiv: {
     position: "absolute",
     zIndex: 2,
@@ -367,9 +368,7 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
     marginTop: "1rem",
   },
-  section: {
-    padding: 10,
-  },
+
   title: {
     fontFamily: "Poppins",
     fontSize: "2rem",
@@ -390,6 +389,26 @@ const useStyles = makeStyles((theme) => ({
       width: "100%",
     },
   },
+  overlay: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-40%,  -50%)",
+    background: "black",
+    borderRadius: 8,
+    border: "1px solid white",
+    padding: 8,
+    zIndex: 3,
+    opacity: 1,
+    "&:hover": {
+      opacity: 1,
+    },
+    [theme.breakpoints.down(500)]: {
+      minWidth: 250,
+      minHeight: 250,
+    },
+  },
+
   ul: {
     color: "white",
     margin: 20,
@@ -397,94 +416,84 @@ const useStyles = makeStyles((theme) => ({
   },
   lists: {
     color: "white",
+    lineHeight: 1.8,
+  },
+  icons: {
+    color: "blue",
+    background: "white",
+    borderRadius: 4,
+    padding: 2,
   },
 }));
-
-const projectData = [
-  {
-    Id: 1,
-    image: "/images/API Gateway.jpg",
-    title: "API Gateway",
-
-    p1: "Currently developing and implementing API gateway using kong for Digivalet.",
-
-    p2: "It have prometheus alerting with system service and logging over loki and visualizing with Grafana.",
-  },
-  {
-    Id: 2,
-    image: "/images/DCT.jpg",
-    title: "DCT (DigiValet Setup)",
-
-    p1: "Worked on Digivalet's internal system which configures individual Hotels. ",
-    p2: "It has 2 instances, DCT Cloud and Client (on sites).",
-    p3: "Used DRF, Celery, Docker and python modules like requests, zipfile, sqlite, shutil etc.",
-  },
-  {
-    Id: 3,
-    image: "/images/DVU.jpg",
-    title: "DVU (DigiValet Utilities) ",
-
-    p1: "Created Utilities tool for Digivalet in with transfer data between remote servers, Server verification, iOS utility.",
-
-    p2: "Used paramiko, pdfkit, sshtunnel and celery modules over Django Framework.",
-
-    p3: "Single Handedly architected custom utility system using DRF which is responsible for automating the tasks.",
-  },
-  {
-    Id: 4,
-    image: "/images/MARS.jpg",
-    title: "MARS (Modern Analytics and Reporting System)",
-
-    p1: "Created a system for analysis of the data based on logs,  database, navigation data of iPad on firebase ",
-    p2: "Used of ELK stack, BigQuery Library, MariaDB and used   Celery for Cron jobs on Django Framework.",
-    p3: "Used Docker for containerizing system.",
-  },
-  {
-    Id: 5,
-    image: "/images/Snap-Sponsor.jpg",
-    title: "Snap-Sponsor",
-    p1: "JSON APIs for data transmission and session management.",
-
-    p2: "The database we are using is MongoDB and MongoDB cloud for storage and Firebase for push notification in iOS.",
-
-    p3: "Implemented system in which the user will see the posts according to tags he/she follow and tags which post have with best match. ",
-  },
-];
 
 const projects = [
   {
     title: "DVU",
     work: "DigiValet Utilities",
     image: "/images/DVU.jpg",
+    para: [
+      "Created Utilities tool for Digivalet in with transfer data between remote servers, Server verification, iOS utility.",
+
+      "Used paramiko, pdfkit, sshtunnel and celery modules over Django Framework.",
+
+      "Single Handedly architected custom utility system using DRF which is responsible for automating the tasks.",
+    ],
   },
 
   {
     title: "API",
     work: "Gateway",
     image: "/images/API Gateway.jpg",
+    para: [
+      "Currently developing and implementing API gateway using kong for Digivalet.",
+
+      "It have prometheus alerting with system service and logging over loki and visualizing with Grafana.",
+    ],
   },
   {
     title: "DCT",
     work: "DigiValet Setup",
     image: "/images/DCT.jpg",
+    para: [
+      "Worked on Digivalet's internal system which configures individual Hotels. ",
+
+      "It has 2 instances, DCT Cloud and Client (on sites).",
+
+      "Used DRF, Celery, Docker and python modules like requests, zipfile, sqlite, shutil etc.",
+    ],
   },
 
   {
     title: "MARS",
     work: "Modern Analytics and Reporting System)",
     image: "/images/MARS.jpg",
+    para: [
+      "Created a system for analysis of the data based on logs,  database, navigation data of iPad on firebase ",
+
+      "Used of ELK stack, BigQuery Library, MariaDB and used   Celery for Cron jobs on Django Framework.",
+
+      "Used Docker for containerizing system.",
+    ],
   },
   {
     title: "Snap-Sponsor",
     work: "",
     image: "/images/Snap-Sponsor.jpg",
+    para: [
+      "JSON APIs for data transmission and session management.",
+
+      "The database we are using is MongoDB and MongoDB cloud for storage and Firebase for push notification in iOS.",
+
+      "Implemented system in which the user will see the posts according to tags he/she follow and tags which post have with best match. ",
+    ],
   },
 ];
 
 const socialMediaIcons = [
-  { link: "/", image: "/icons/facebook.svg" },
-  { link: "/", image: "/icons/instagram.svg" },
-  { link: "/", image: "/icons/linkedin.svg" },
+  { link: "https://github.com/vbhv10", image: "/icons/github.svg" },
+  { link: "https://www.linkedin.com/in/vbhv/", image: "/icons/linkedin.svg" },
+  { link: "https://leetcode.com/ivbhv/", image: "/icons/leetcode.svg" },
+  { link: "https://twitter.com/ivbhv", image: "/icons/twitter.svg" },
 ];
 
 export default function Home() {
@@ -581,36 +590,24 @@ export default function Home() {
                     <p className={classes.projectSmallText}>{project.work}</p>
                   </div>
                   <img
-                    className={classes.projectImg}
+                    className={clsx(classes.projectImg, classes.image)}
                     src={project.image}
                     alt=""
                   />
+                  <div className={classes.overlay}>
+                    {" "}
+                    <ul className={classes.ul}>
+                      {project?.para?.map((p) => (
+                        <li className={classes.lists}>
+                          <p>{p}</p>
+                        </li>
+                      ))}
+                    </ul>{" "}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
-          <section className={classes.section} id="project">
-            <Slider {...settings}>
-              {projectData.map(({ image, title, Id, p1, p2, p3 }) => (
-                <>
-                  <div>
-                    <img
-                      className={classes.projectImg2}
-                      style={{ width: "100%" }}
-                      src={image}
-                      alt="#"
-                    />
-                    <h4 className={classes.title}>{title}</h4>
-                    <ul className={classes.ul}>
-                      <li className={classes.lists}>{p1}</li>
-                      <li className={classes.lists}>{p2}</li>
-                      <li className={classes.lists}>{p3}</li>
-                    </ul>
-                  </div>
-                </>
-              ))}
-            </Slider>
-          </section>
 
           <div className={classes.contact} id="contact">
             <p className={classes.sectionHeading}>Contact</p>
@@ -653,7 +650,7 @@ export default function Home() {
                 <div className={classes.socialMediaCont}>
                   {socialMediaIcons.map((icon, i) => (
                     <a href={icon.link} key={i}>
-                      <img src={icon.image} alt="" />
+                      <img className={classes.icons} src={icon.image} alt="" />
                     </a>
                   ))}
                 </div>
