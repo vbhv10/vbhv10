@@ -393,14 +393,16 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: "translate(-40%,  -50%)",
+    transform: "translate(-42%,  -50%)",
     background: "black",
     borderRadius: 8,
     border: "1px solid white",
     padding: 8,
     zIndex: 3,
-    opacity: 1,
+    opacity: 0,
+    width: "calc(100% - 7rem)",
     "&:hover": {
+      transition: "all 0.3s ease",
       opacity: 1,
     },
     [theme.breakpoints.down(500)]: {
