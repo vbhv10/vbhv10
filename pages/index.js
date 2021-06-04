@@ -88,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     [theme.breakpoints.down(905)]: {
-      minHeight: "23rem",
+      minHeight: "15rem",
     },
   },
   personImg: {
@@ -571,7 +571,7 @@ export default function Home() {
               <p className={classes.sectionHeading}>About</p>
               <h2 className={classes.aboutHead}>
                 <span>Hello, I am Vaibhav Mahajan,</span>{" "}
-                <span>I am UI/UX designer.</span>
+                <span>I am Python Developer.</span>
               </h2>
               <p className={classes.aboutDescription}>
                 Engineering professional with experience in Python development.
