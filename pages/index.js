@@ -236,7 +236,7 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateColumns: "5fr 2fr",
     columnGap: "2rem",
-    margin: "4rem 0",
+    margin: "3rem 0",
     [theme.breakpoints.down(790)]: {
       gridTemplateColumns: "1fr",
     },
