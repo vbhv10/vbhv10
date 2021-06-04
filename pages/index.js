@@ -404,24 +404,26 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: "translate(-50%,  -50%)",
+    transform: "translate(-43%,  -50%)",
     background: "black",
     borderRadius: 8,
-    border: "1px solid white",
+    borderLeft: "4px solid white",
+    borderRight: "4px solid white",
     padding: 8,
     zIndex: 3,
+    width: "calc(100% - 7rem)",
     display: "none",
-    width: "100%",
-    height: "100%",
+
     overflow: "hidden",
     overflowY: "scroll",
-    "&:hover": {
-      transition: "all 0.3s ease",
-      opacity: 1,
-    },
+    "&:hover": {},
+
+    "&::-webkit-scrollbar": { width: "0%", color: "black" },
     [theme.breakpoints.down(500)]: {
-      minWidth: 250,
-      minHeight: 250,
+      display: "center",
+      transform: "translate(-50%,  -50%)",
+      width: "100%",
+      height: "100%",
     },
   },
 
@@ -481,7 +483,7 @@ const projects = [
 
   {
     title: "MARS",
-    work: "Modern Analytics and Reporting System)",
+    work: "(Modern Analytics and Reporting System)",
     image: "/images/MARS.jpg",
     para: [
       "Created a system for analysis of the data based on logs,  database, navigation data of iPad on firebase ",
@@ -612,7 +614,7 @@ export default function Home() {
                   />
                   <div className={classes.overlay}>
                     {" "}
-                    <ul className={clsx(classes.ul, classes.hideScroll)}>
+                    <ul className={clsx(classes.ul)}>
                       {project?.para?.map((p) => (
                         <li className={classes.lists}>
                           <p>{p}</p>
