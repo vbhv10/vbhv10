@@ -132,6 +132,7 @@ const useStyles = makeStyles((theme) => ({
   project: {
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
     position: "relative",
     width: "50%",
     transition: "width 0.3s",
@@ -151,8 +152,18 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "3rem",
       },
     },
+    "&:hover": {
+      "& $overlay": {
+        display: "block",
+      },
+    },
   },
-
+  hideScroll: {
+    overflow: "hidden",
+    overflowY: "auto",
+    paddingRight: 17,
+    boxSizing: "content-box",
+  },
   projectTextDiv: {
     position: "absolute",
     zIndex: 2,
@@ -393,14 +404,17 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
     top: "50%",
     left: "50%",
-    transform: "translate(-42%,  -50%)",
+    transform: "translate(-50%,  -50%)",
     background: "black",
     borderRadius: 8,
     border: "1px solid white",
     padding: 8,
     zIndex: 3,
-    opacity: 0,
-    width: "calc(100% - 7rem)",
+    display: "none",
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+    overflowY: "scroll",
     "&:hover": {
       transition: "all 0.3s ease",
       opacity: 1,
@@ -598,7 +612,7 @@ export default function Home() {
                   />
                   <div className={classes.overlay}>
                     {" "}
-                    <ul className={classes.ul}>
+                    <ul className={clsx(classes.ul, classes.hideScroll)}>
                       {project?.para?.map((p) => (
                         <li className={classes.lists}>
                           <p>{p}</p>
