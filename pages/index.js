@@ -1,8 +1,23 @@
 import { Box, makeStyles, styled } from "@material-ui/core";
 import clsx from "clsx";
 import Head from "next/head";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 import { useState } from "react";
 import Navbar from "../src/Header/Navbar";
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  swipeToSlide: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: true,
+};
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -63,8 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textImgDiv: {
     display: "grid",
-    gridTemplateColumns: "5fr 2fr",
-    columnGap: "2rem",
+    gridTemplateColumns: "1fr",
     [theme.breakpoints.down(790)]: {
       gridTemplateColumns: "1fr",
     },
@@ -74,14 +88,18 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     [theme.breakpoints.down(905)]: {
-      minHeight: "23rem",
+      minHeight: "15rem",
     },
   },
   personImg: {
-    width: "100%",
+    width: "70%",
     alignSelf: "center",
     [theme.breakpoints.down(790)]: {
-      display: "none",
+      width: "70%",
+      height: "auto",
+      marginLeft: "auto",
+      marginRight: "auto",
+      margin: "1.2rem",
     },
   },
   heading: {
@@ -114,6 +132,7 @@ const useStyles = makeStyles((theme) => ({
   project: {
     display: "flex",
     alignItems: "center",
+    overflow: "hidden",
     position: "relative",
     width: "50%",
     transition: "width 0.3s",
@@ -133,6 +152,17 @@ const useStyles = makeStyles((theme) => ({
         marginTop: "3rem",
       },
     },
+    "&:hover": {
+      "& $overlay": {
+        display: "block",
+      },
+    },
+  },
+  hideScroll: {
+    overflow: "hidden",
+    overflowY: "auto",
+    paddingRight: 17,
+    boxSizing: "content-box",
   },
   projectTextDiv: {
     position: "absolute",
@@ -206,7 +236,7 @@ const useStyles = makeStyles((theme) => ({
     display: "grid",
     gridTemplateColumns: "5fr 2fr",
     columnGap: "2rem",
-    margin: "4rem 0",
+    margin: "3rem 0",
     [theme.breakpoints.down(790)]: {
       gridTemplateColumns: "1fr",
     },
@@ -349,40 +379,139 @@ const useStyles = makeStyles((theme) => ({
     letterSpacing: 2,
     marginTop: "1rem",
   },
+
+  title: {
+    fontFamily: "Poppins",
+    fontSize: "2rem",
+    fontStyle: "normal",
+    fontWeight: 600,
+
+    letterSpacing: "0.1em",
+    textAlign: "left",
+  },
+  projectImg2: {
+    padding: 10,
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginLeft: "auto",
+    transition: "width 0.3s",
+    [theme.breakpoints.down(500)]: {
+      width: "100%",
+    },
+  },
+  overlay: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-43%,  -50%)",
+    background: "black",
+    borderRadius: 8,
+    borderLeft: "4px solid white",
+    borderRight: "4px solid white",
+    padding: 8,
+    zIndex: 3,
+    width: "calc(100% - 7rem)",
+    display: "none",
+
+    overflow: "hidden",
+    overflowY: "scroll",
+    "&:hover": {},
+
+    "&::-webkit-scrollbar": { width: "0%", color: "black" },
+    [theme.breakpoints.down(500)]: {
+      display: "center",
+      transform: "translate(-50%,  -50%)",
+      width: "100%",
+      height: "100%",
+    },
+  },
+
+  ul: {
+    color: "white",
+    margin: 20,
+    lineHeight: 1.8,
+  },
+  lists: {
+    color: "white",
+    lineHeight: 1.8,
+  },
+  icons: {
+    color: "blue",
+    background: "white",
+    borderRadius: 4,
+    padding: 2,
+  },
 }));
 
 const projects = [
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/foodApp.svg",
+    title: "DVU",
+    work: "DigiValet Utilities",
+    image: "/images/DVU.jpg",
+    para: [
+      "Created Utilities tool for Digivalet in with transfer data between remote servers, Server verification, iOS utility.",
+
+      "Used paramiko, pdfkit, sshtunnel and celery modules over Django Framework.",
+
+      "Single Handedly architected custom utility system using DRF which is responsible for automating the tasks.",
+    ],
+  },
+
+  {
+    title: "API",
+    work: "Gateway",
+    image: "/images/API Gateway.jpg",
+    para: [
+      "Currently developing and implementing API gateway using kong for Digivalet.",
+
+      "It have prometheus alerting with system service and logging over loki and visualizing with Grafana.",
+    ],
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/furnitureApp.svg",
+    title: "DCT",
+    work: "DigiValet Setup",
+    image: "/images/DCT.jpg",
+    para: [
+      "Worked on Digivalet's internal system which configures individual Hotels. ",
+
+      "It has 2 instances, DCT Cloud and Client (on sites).",
+
+      "Used DRF, Celery, Docker and python modules like requests, zipfile, sqlite, shutil etc.",
+    ],
+  },
+
+  {
+    title: "MARS",
+    work: "(Modern Analytics and Reporting System)",
+    image: "/images/MARS.jpg",
+    para: [
+      "Created a system for analysis of the data based on logs,  database, navigation data of iPad on firebase ",
+
+      "Used of ELK stack, BigQuery Library, MariaDB and used   Celery for Cron jobs on Django Framework.",
+
+      "Used Docker for containerizing system.",
+    ],
   },
   {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/techLandingPage.svg",
-  },
-  {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/foodApp.svg",
-  },
-  {
-    title: "Food App",
-    work: "UI/UX",
-    image: "projects/furnitureApp.svg",
+    title: "Snap-Sponsor",
+    work: "",
+    image: "/images/Snap-Sponsor.jpg",
+    para: [
+      "JSON APIs for data transmission and session management.",
+
+      "The database we are using is MongoDB and MongoDB cloud for storage and Firebase for push notification in iOS.",
+
+      "Implemented system in which the user will see the posts according to tags he/she follow and tags which post have with best match. ",
+    ],
   },
 ];
 
 const socialMediaIcons = [
-  { link: "/", image: "/icons/facebook.svg" },
-  { link: "/", image: "/icons/instagram.svg" },
-  { link: "/", image: "/icons/linkedin.svg" },
+  { link: "https://github.com/vbhv10", image: "/icons/github.svg" },
+  { link: "https://www.linkedin.com/in/vbhv/", image: "/icons/linkedin.svg" },
+  { link: "https://leetcode.com/ivbhv/", image: "/icons/leetcode.svg" },
+  { link: "https://twitter.com/ivbhv", image: "/icons/twitter.svg" },
 ];
 
 export default function Home() {
@@ -398,7 +527,7 @@ export default function Home() {
     const subject = "Mail via website.";
     const body = `Name: ${name}          Email: ${email}          Message: ${message}`;
     window.open(
-      `mailto:vaibhav@gmail.com?subject=${subject}&body=${body}`,
+      `mailto:i.vaibhavmahajan@gmail.com?subject=${subject}&body=${body}`,
       "_self"
     );
 
@@ -433,7 +562,30 @@ export default function Home() {
                 <span>Vaibhav</span> <span>Mahajan</span>
               </h1>
             </div>
-            <img className={classes.personImg} src="/person.svg" alt="" />
+          </div>
+
+          <div className={classes.about} id="about">
+            <img
+              className={classes.personImg}
+              src="/images/profile-pic.png"
+              alt=""
+            />
+            <div className={classes.aboutTextDiv}>
+              <p className={classes.sectionHeading}>About</p>
+              <h2 className={classes.aboutHead}>
+                <span>Hello, I am Vaibhav Mahajan,</span>{" "}
+                <span>I am Python Developer.</span>
+              </h2>
+              <p className={classes.aboutDescription}>
+                Engineering professional with experience in Python development.
+                Mastering/Leading in the development of backend applications
+                /tools using Python. Worked on several python framework like
+                Django and libraries like NumPy, Pandas, Paramiko, Celery,
+                Elasticsearch etc. Having good experience in Docker. I am
+                interested and exploring the field of machine learning and
+                looking forward to grow myself along with the company.
+              </p>
+            </div>
           </div>
 
           <div id="work">
@@ -459,30 +611,23 @@ export default function Home() {
                     <p className={classes.projectSmallText}>{project.work}</p>
                   </div>
                   <img
-                    className={classes.projectImg}
+                    className={clsx(classes.projectImg, classes.image)}
                     src={project.image}
                     alt=""
                   />
+                  <div className={classes.overlay}>
+                    {" "}
+                    <ul className={clsx(classes.ul)}>
+                      {project?.para?.map((p) => (
+                        <li className={classes.lists}>
+                          <p>{p}</p>
+                        </li>
+                      ))}
+                    </ul>{" "}
+                  </div>
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className={classes.about} id="about">
-            <div className={classes.aboutTextDiv}>
-              <p className={classes.sectionHeading}>About</p>
-              <h2 className={classes.aboutHead}>
-                <span>Hello, I am Vaibhav Mahajan,</span>{" "}
-                <span>I am UI/UX designer.</span>
-              </h2>
-              <p className={classes.aboutDescription}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam repudiandae nisi molestias fugit optio quos eligendi
-                dignissimos possimus ipsa atque, dicta dolorem voluptatibus
-                rerum sequi similique nostrum, est enim dolor?
-              </p>
-            </div>
-            <img className={classes.personImg} src="/person.svg" alt="" />
           </div>
 
           <div className={classes.contact} id="contact">
@@ -526,7 +671,7 @@ export default function Home() {
                 <div className={classes.socialMediaCont}>
                   {socialMediaIcons.map((icon, i) => (
                     <a href={icon.link} key={i}>
-                      <img src={icon.image} alt="" />
+                      <img className={classes.icons} src={icon.image} alt="" />
                     </a>
                   ))}
                 </div>
