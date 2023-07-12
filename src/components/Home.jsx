@@ -9,9 +9,9 @@ const Home = () => {
         {/* Container flexbox for text */}
         <div className='w-full h-screen md:max-w-[900px] text-left'>
             <div className='max-w-[1000px] flex flex-col justify-center h-full mx-8 sm:ml-8'>
-                <p className='text-[#1e3751]'>Hi, I am</p>
+                {/* <p className='text-[#1e3751]'>Hi, I am</p> */}
                 <h1 className='text-3xl md:text-6xl font-bold text-[#1e3751] mb-2'>Vaibhav Mahajan</h1>
-                <h6 className='text-2xl md:text-3xl font-bold text-[#6a7280] max-w-[800px]'>A DevOps Engineer, Python Developer and Research Enthusiast</h6>
+                <h6 className='text-2xl md:text-3xl font-bold text-[#6a7280] max-w-[800px]'>A Cloud/DevOps Engineer, Python Developer and Research Enthusiast</h6>
                 <p className='text-[#6a7280] py-4 max-w-[700px]'>I have a strong background in server-side development and a passion for creating innovative solutions. With expertise in programming languages, cloud computing, and system design, I excel in developing scalable applications and collaborating with cross-functional teams</p>
                 <div>
                 

@@ -1,9 +1,6 @@
 import React, {useState} from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Logo from '../assets/Logo2.png'
-import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa'
-// import {HiOutlineMail} from 'react-icons/hi'
-// import {BsFillPersonLinesFill} from 'react-icons/bs'
+import {FaBars, FaTimes} from 'react-icons/fa'
 import { Link } from 'react-scroll'
 
 const Navbar = () => {

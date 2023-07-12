@@ -48,7 +48,7 @@ const Projects = () => {
                         <a href={project.source} target="_blank" rel="noreferrer">
                             <button
                             className="rounded-sm text-white bg-[#C3073F] px-3 py-1 my-3 mx-1 flex items-center hover:bg-[#1e3751]">
-                            Code
+                            Code Sample
                         </button>
                         </a>
                         )}
