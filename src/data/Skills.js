@@ -14,7 +14,7 @@ export const skills = [
     {
         id: 3,
         title: 'Jenkins',
-        img: '/assets/jenkins.png',
+        img: '/assets/jenkins.jpeg',
         url: 'https://www.jenkins.io/'
     },
     {
@@ -38,7 +38,7 @@ export const skills = [
     {
         id: 7,
         title: 'Istio',
-        img: '/assets/istio.jpeg',
+        img: '/assets/istio.png',
         url: 'https://istio.io/'
     },
     {
