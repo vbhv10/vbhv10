@@ -14,7 +14,7 @@ export const skills = [
     {
         id: 3,
         title: 'Jenkins',
-        img: '/assets/jenkins.jpeg',
+        img: '/assets/jenkins.png',
         url: 'https://www.jenkins.io/'
     },
     {
