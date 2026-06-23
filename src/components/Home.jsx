@@ -9,9 +9,11 @@ import ProfileImage from '../assets/Self.png'
 
 const highlights = [
     'CKA Certified',
-    '2+ yrs Platform Engineering',
-    '21+ AWS accounts',
-    '40+ Terraform modules',
+    'Kubernetes / EKS',
+    'GitOps & Continuous Delivery',
+    'Infrastructure as Code',
+    'AWS · Azure · GCP',
+    'CI/CD & Automation',
 ]
 
 const Home = () => {
