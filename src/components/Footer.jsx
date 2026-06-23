@@ -1,66 +1,63 @@
 import React from 'react'
-import {
-	FaGithub, FaLinkedin,
-} from 'react-icons/fa';
-import {HiOutlineMail} from 'react-icons/hi'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { HiOutlineMail } from 'react-icons/hi'
+import { Link } from 'react-scroll'
+import { Fade } from 'react-awesome-reveal'
+
 const socialLinks = [
-	{
-		id: 1,
-		icon: <FaGithub />,
-		url: 'https://github.com/vbhv10',
-        bgColour: '#02040a'
-	},
-	{
-		id: 2,
-		icon: <FaLinkedin />,
-		url: 'https://www.linkedin.com/in/vbhv/',
-        bgColour: '#0b65c2'
-	},
-	{
-		id: 3,
-		icon: <HiOutlineMail />,
-		url: 'mailto: i.vaibhavmahajan@gmail.com',
-        bgColour: '#C3073F'
-	}
-];
+    { id: 1, icon: <FaGithub />, url: 'https://github.com/vbhv10', label: 'GitHub' },
+    { id: 2, icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/vbhv/', label: 'LinkedIn' },
+    { id: 3, icon: <HiOutlineMail />, url: 'mailto:i.vaibhavmahajan@gmail.com', label: 'Email' },
+]
+
+const navItems = ['home', 'about', 'skills', 'experience', 'projects']
 
 const Footer = () => {
-  return (
-    <>
-    <div name="contact" className="my-20 text-[#1e3751]">
-			<div className="max-w-[1000px] mx-auto p-5 flex flex-col justify-center w-full h-full sm:pt-10 border-t-2 border-primary-light dark:border-secondary-dark">
-				{/* Footer social links */}
-				<div className="font-bold text-[#1e3751] flex flex-col justify-center items-center mb-5 sm:mb-[55px]">
-					<p className="text-3xl sm:text-4xl text-[#1e3751] mb-5">
-						Contact me
-					</p>
-					<ul className="flex gap-4 sm:gap-8">
-						{socialLinks.map((link) => (
-							<a
-								href={link.url}
-								target="__blank"
-								key={link.id}
-								className={`text-white contact cursor-pointer rounded-lg shadow-sm p-4 duration-300`}
-								style={{backgroundColor: link.bgColour}}
-							>
-								<i className="text-xl sm:text-2xl md:text-3xl">
-									{link.icon}
-								</i>
-							</a>
-						))}
-					</ul>
-				</div>
+    return (
+        <>
+            <div name='contact' className='py-24'>
+                <div className='section-pad text-center'>
+                    <Fade direction='up' triggerOnce cascade damping={0.12}>
+                        <p className='text-accent font-semibold tracking-widest text-sm uppercase'>Contact</p>
+                        <h2 className='text-3xl md:text-5xl font-bold text-textMain mt-2'>Let's build something</h2>
+                        <p className='text-textMuted mt-4 max-w-[560px] mx-auto leading-relaxed'>
+                            I'm open to new opportunities in platform, DevOps, and cloud engineering.
+                            Whether you want to talk shop or discuss a role, my inbox is always open.
+                        </p>
+                        <p className='text-textMuted text-sm mt-3'>📍 San Francisco Bay Area · Remote-friendly</p>
 
-			</div>
-		</div>
-        {/* Copyright */}
-        <div className="w-[100%] text-[#1e3751] bg-[#f0f0f0] p-5 ">
-        <div className=' items-center text-center'>
-                <div>&copy; {new Date().getFullYear()} Copyright</div>
-        </div>
-    </div>
-    </>
-  )
+                        <a href='mailto:i.vaibhavmahajan@gmail.com'>
+                            <button className='mt-8 text-white bg-accentDeep hover:bg-accent rounded-lg px-8 py-3 duration-300'>Say Hello</button>
+                        </a>
+
+                        <div className='flex justify-center gap-5 mt-8'>
+                            {socialLinks.map((link) => (
+                                <a key={link.id} href={link.url} target='_blank' rel='noreferrer' aria-label={link.label}
+                                    className='text-textMuted hover:text-accent text-3xl duration-300'>
+                                    {link.icon}
+                                </a>
+                            ))}
+                        </div>
+                    </Fade>
+                </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div className='border-t border-line'>
+                <div className='section-pad py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-textMuted'>
+                    <div>&copy; {new Date().getFullYear()} Vaibhav Mahajan</div>
+                    <div className='flex gap-4'>
+                        {navItems.map((item) => (
+                            <Link key={item} to={item} offset={-70} smooth={true} duration={500}
+                                className='capitalize cursor-pointer hover:text-accent duration-300'>
+                                {item}
+                            </Link>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </>
+    )
 }
 
 export default Footer

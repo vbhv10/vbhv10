@@ -1,8 +1,53 @@
 export const projects = [
     {
+      id: 101,
+      name: 'GitOps Delivery Platform',
+      date: '2024 - Present',
+      category: 'Professional',
+      company: 'Centric Software',
+      isPrivate: true,
+      tech: ['ArgoCD', 'Kargo', 'Terraform', 'AWS', 'EKS', 'Kustomize', 'GitOps'],
+      tagline:
+        'A multi-account GitOps delivery platform for a SaaS PLM product, built on ArgoCD ApplicationSets and Kargo progressive delivery and backed by a library of 40+ reusable Terraform modules. Automates dev → qa → preprod → prod promotions across 4 domains and 21+ AWS accounts through a self-service model.',
+    },
+    {
+      id: 102,
+      name: 'C8 Product Installer Automation',
+      date: '2024 - Present',
+      category: 'Professional',
+      company: 'Centric Software',
+      isPrivate: true,
+      tech: ['install4j', 'Jenkins', 'Java', 'SQL Server', 'Oracle', 'CI/CD', 'Shell'],
+      tagline:
+        'Automated cross-platform installer pipeline for an enterprise PLM product. Supports unattended and console install modes, multi-database setup (SQL Server, Oracle), and is hardened across hundreds of release builds via Jenkins.',
+    },
+    {
+      id: 103,
+      name: 'HCP Vault Dedicated Platform',
+      date: '2025 - 2026',
+      category: 'Professional',
+      company: 'Centric Software',
+      isPrivate: true,
+      tech: ['HashiCorp Vault', 'Terraform', 'AWS', 'OIDC', 'EKS', 'Secrets Management'],
+      tagline:
+        'A HashiCorp Vault (HCP Vault Dedicated) platform with JWT/OIDC auth for private EKS clusters, DR replication, and Secrets Sync to AWS Secrets Manager via Workload Identity Federation. Led a zero-downtime migration onto it, eliminating static credentials across all AWS accounts.',
+    },
+    {
+      id: 104,
+      name: 'Aura Serverless Platform',
+      date: '2025 - Present',
+      category: 'Professional',
+      company: 'Centric Software',
+      isPrivate: true,
+      tech: ['AWS SAM', 'Lambda', 'Python', 'TypeScript', 'Terraform', 'Event-Driven'],
+      tagline:
+        'An event-driven, serverless application platform for the innovation team, built with AWS SAM and Lambda using Python and TypeScript, with infrastructure managed in Terraform and local testing via LocalStack.',
+    },
+    {
       id: 1,
       name: 'Kubernetes DevOps Automation Suite',
       date: '2023',
+      category: 'Personal',
       tech: ['Kubernetes', 'Jenkins', 'Kafka', 'Terraform', 'CI/CD', 'Packer', 'Python', 'PostgreSQL', 'Kuernetes Operator', 'Golang'],
       tagline:
         'This project showcases a comprehensive solution for automating the deployment of cloud-native applications. Leveraging Infrastructure as Code (IaC), Kubernetes, Helm charts, Continuous Integration/Continuous Deployment (CI/CD) pipelines, and modern DevOps practices, it streamlines development, deployment, and management processes.',

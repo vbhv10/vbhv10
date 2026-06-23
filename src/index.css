@@ -2,24 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-@layer base{
-    body{
-        @apply font-[Lato]
+@layer base {
+    html {
+        scroll-behavior: smooth;
     }
-    li{
-        color: white;
-        @apply px-4;
-        @apply cursor-pointer;
+    body {
+        @apply bg-base text-textMain font-body antialiased;
+        background-image:
+            radial-gradient(900px 500px at 50% -8%, rgba(225, 29, 72, 0.10), transparent 70%),
+            radial-gradient(700px 500px at 100% 0%, rgba(56, 130, 246, 0.07), transparent 65%);
+        background-attachment: fixed;
+    }
+    h1, h2, h3, h4 {
+        @apply font-heading;
     }
 }
-.mobile-menu li{
-    @apply py-6;
-    @apply text-4xl;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #121a2e;
+}
+::-webkit-scrollbar-thumb {
+    background: #314262;
+    border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #3f527a;
 }
 
-.contact:hover{
-    color: #1e3751;
-    background-color: azure !important;
+/* Reusable utilities */
+.section-pad {
+    @apply max-w-[1100px] mx-auto px-5 sm:px-8;
+}
+.card {
+    @apply bg-surface border border-line rounded-2xl;
+    box-shadow: 0 6px 24px -14px rgba(0, 0, 0, 0.55);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    box-shadow: 0 14px 34px -16px rgba(0, 0, 0, 0.6);
+}
+.chip {
+    @apply text-xs rounded-full px-3 py-1 border border-line bg-surfaceAlt text-textMuted;
+}
+.grid-bg {
+    background-image:
+        linear-gradient(rgba(49,66,98,0.40) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(49,66,98,0.40) 1px, transparent 1px);
+    background-size: 40px 40px;
 }

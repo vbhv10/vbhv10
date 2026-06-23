@@ -1,18 +1,18 @@
 export const bioData = [
 	{
 		id: 1,
-		para: "I am Vaibhav Mahajan, a DevOps Engineer, Python Product Engineer, and Certified Kubernetes Administrator with a strong background in cloud computing, software development, and infrastructure management. I hold a Master's degree in Information Systems and bring a passion for delivering efficient software solutions.",
+		para: "I am Vaibhav Mahajan, a DevOps & Platform Engineer and Certified Kubernetes Administrator (CKA) with a strong background in cloud infrastructure, automation, and software delivery. I hold a Master's degree in Information Systems from Northeastern University and work across the full delivery lifecycle — from infrastructure-as-code and CI/CD to release automation and application platforms.",
 	},
 	{
 		id: 2,
-		para: "Throughout my career, I have successfully built data ingestion processes, implemented automation solutions, and made significant contributions to product development. At Deqode, I developed a comprehensive data ingestion process using Airbyte and reduced resource usage by creating a custom Python connector. I also implemented Apache Airflow for orchestration and utilized Terraform and Gitlab CI for deploying subprojects on Kubernetes. "
+		para: "At Centric Software, I build both the platform behind a SaaS PLM product and the release tooling that ships its enterprise product to customers. I built a GitOps delivery platform on ArgoCD and Kargo, backed by a library of 40+ reusable Terraform modules, automating promotions across 4 domains and 21+ AWS accounts. I also own an automated product installer pipeline (install4j + Jenkins) with unattended/console install modes and multi-database support.",
 	},
 	{
 		id: 3,
-		para: "During my time at DigiValet, I played a key role in architecting an automated data transfer solution, significantly reducing server setup time. I also designed and implemented the Modern Analytics and Reporting System (MARS), enabling data analysis and integration with third-party services for prestigious clients."
+		para: "I designed a HashiCorp Vault (HCP Vault Dedicated) platform and led a zero-downtime migration onto it, eliminating static credentials across all AWS accounts. I deploy and operate applications on Amazon EKS with Helm, run fleet-wide cluster upgrades, and have built event-driven, serverless services using AWS SAM and Lambda.",
 	},
 	{
 		id: 4,
-		para: "In organisations that embrace innovation and continual progress, I am happy to provide my skills. My ultimate goal in life is to contribute something to the world that I have made and will benefit everyone."
+		para: "Earlier in my career I worked in data engineering and backend development — building modern data stacks with Airflow, Airbyte, and DBT, securing EKS environments with CI/CD, and designing centralized auth and secrets systems with Vault. I enjoy solving complex infrastructure problems, automating away toil, and collaborating with cross-functional teams to deliver reliable, scalable systems.",
 	}
 ];

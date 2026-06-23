@@ -1,122 +1,55 @@
-export const skills = [
+export const skillGroups = [
     {
-        id: 1,
-        title: 'Kubernetes',
-        img: '/assets/kubernetes.png',
-        url: 'https://kubernetes.io/docs/home/'
+        category: 'Cloud Platforms',
+        items: [
+            { title: 'AWS', img: '/assets/aws.png', url: 'https://docs.aws.amazon.com/' },
+            { title: 'Azure', img: '/assets/azure.svg', url: 'https://learn.microsoft.com/en-us/azure/' },
+            { title: 'GCP', img: '/assets/gcp.png', url: 'https://cloud.google.com/docs' },
+        ],
     },
     {
-        id: 2,
-        title: 'Docker',
-        img: '/assets/docker.png',
-        url: 'https://docs.docker.com'
+        category: 'Containers & Orchestration',
+        items: [
+            { title: 'Kubernetes', img: '/assets/kubernetes.png', url: 'https://kubernetes.io/docs/home/' },
+            { title: 'Docker', img: '/assets/docker.png', url: 'https://docs.docker.com' },
+            { title: 'Helm', img: '/assets/helm.svg', url: 'https://helm.sh/' },
+            { title: 'Istio', img: '/assets/istio.png', url: 'https://istio.io/' },
+        ],
     },
     {
-        id: 3,
-        title: 'Jenkins',
-        img: '/assets/jenkins.png',
-        url: 'https://www.jenkins.io/'
+        category: 'IaC, GitOps & Secrets',
+        items: [
+            { title: 'Terraform', img: '/assets/terraform.png', url: 'https://developer.hashicorp.com/terraform/docs' },
+            { title: 'Argo CD', img: '/assets/argocd.svg', url: 'https://argo-cd.readthedocs.io/' },
+            { title: 'Packer', img: '/assets/packer.svg', url: 'https://developer.hashicorp.com/packer/docs' },
+            { title: 'Vault', img: '/assets/vault.svg', url: 'https://developer.hashicorp.com/vault/docs' },
+        ],
     },
     {
-        id: 4,
-        title: 'Kafka',
-        img: '/assets/kafka.png',
-        url: 'https://kafka.apache.org/'
+        category: 'CI/CD & Tooling',
+        items: [
+            { title: 'Jenkins', img: '/assets/jenkins.png', url: 'https://www.jenkins.io/' },
+            { title: 'GitHub', img: '/assets/github.png', url: 'https://docs.github.com/en' },
+            { title: 'CI/CD', img: '/assets/cicd.png', url: 'https://about.gitlab.com/topics/ci-cd/' },
+            { title: 'Linux', img: '/assets/linux.png', url: 'https://docs.kernel.org' },
+        ],
     },
     {
-        id: 5,
-        title: 'Python',
-        img: '/assets/python.png',
-        url: 'https://www.python.org/doc/'
+        category: 'Languages & Frameworks',
+        items: [
+            { title: 'Python', img: '/assets/python.png', url: 'https://www.python.org/doc/' },
+            { title: 'Golang', img: '/assets/golang.png', url: 'https://go.dev/' },
+            { title: 'Django', img: '/assets/django.png', url: 'https://docs.djangoproject.com/' },
+        ],
     },
     {
-        id: 6,
-        title: 'Golang',
-        img: '/assets/golang.png',
-        url: 'https://go.dev/'
+        category: 'Data & Observability',
+        items: [
+            { title: 'Airflow', img: '/assets/airflow.png', url: 'https://airflow.apache.org/docs/' },
+            { title: 'Kafka', img: '/assets/kafka.png', url: 'https://kafka.apache.org/' },
+            { title: 'Postgres', img: '/assets/postgres.png', url: 'https://www.postgresql.org/docs/' },
+            { title: 'MongoDB', img: '/assets/mongo.png', url: 'https://www.mongodb.com/docs/' },
+            { title: 'ELK Stack', img: '/assets/elk.png', url: 'https://www.elastic.co/guide/index.html' },
+        ],
     },
-    {
-        id: 7,
-        title: 'Istio',
-        img: '/assets/istio.png',
-        url: 'https://istio.io/'
-    },
-    {
-        id: 8,
-        title: 'Django',
-        img: '/assets/django.png',
-        url: 'https://docs.djangoproject.com/en/4.2/'
-    },
-    {
-        id: 9,
-        title: 'AWS',
-        img: '/assets/aws.png',
-        url: 'https://docs.aws.amazon.com/'
-    },
-    {
-        id: 10,
-        title: 'Terraform',
-        img: '/assets/terraform.png',
-        url: 'https://developer.hashicorp.com/terraform/docs'
-    },
-    {
-        id: 11,
-        title: 'GCP',
-        img: '/assets/gcp.png',
-        url: 'https://cloud.google.com/docs'
-    },
-    {
-        id: 12,
-        title: 'CI/CD',
-        img: '/assets/cicd.png',
-        url: 'https://about.gitlab.com/topics/ci-cd/'
-    },
-    {
-        id: 13,
-        title: 'Swift',
-        img: '/assets/swift.png',
-        url: 'https://www.swift.org/documentation/'
-    },
-    {
-        id: 14,
-        title: 'Postgres',
-        img: '/assets/postgres.png',
-        url: 'https://www.postgresql.org/docs/'
-    },
-    {
-        id: 15,
-        title: 'MongoDB',
-        img: '/assets/mongo.png',
-        url: 'https://www.mongodb.com/docs/'
-    },
-    {
-        id: 16,
-        title: 'Airflow',
-        img: '/assets/airflow.png',
-        url: 'https://airflow.apache.org/docs/apache-airflow/stable/index.html'
-    },
-    {
-        id: 17,
-        title: 'GitHub',
-        img: '/assets/github.png',
-        url: 'https://docs.github.com/en'
-    },
-    {
-        id: 18,
-        title: 'ELK Stack',
-        img: '/assets/elk.png',
-        url: 'https://www.elastic.co/guide/index.html'
-    },
-    {
-        id: 19,
-        title: 'LDAP',
-        img: '/assets/ldap.png',
-        url: 'https://ldap.com'
-    },
-    {
-        id: 20,
-        title: 'Linux',
-        img: '/assets/linux.png',
-        url: 'https://docs.kernel.org'
-    }
-]
+];
