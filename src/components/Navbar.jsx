@@ -24,8 +24,8 @@ const Navbar = () => {
 
     return (
         <div className={`z-20 fixed w-full h-[70px] flex justify-between items-center px-5 sm:px-8 duration-300 ${scrolled ? 'bg-base/80 backdrop-blur-md border-b border-line' : 'bg-transparent'}`}>
-            <Link to='home' smooth={true} duration={500} className='cursor-pointer font-heading font-bold text-xl text-textMain'>
-                vaibhav<span className='text-accent'>.</span>
+            <Link to='home' smooth={true} duration={500} className='cursor-pointer flex items-center'>
+                <img src='/assets/logo-mark.png' alt='Vaibhav Mahajan logo' className='h-11 w-auto' />
             </Link>
 
             {/* Desktop menu */}
@@ -45,7 +45,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                 ))}
-                <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume.pdf'>
+                <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume-devops-engineer.pdf'>
                     <button className='ml-3 text-sm text-white bg-accentDeep hover:bg-accent rounded-lg px-4 py-2 duration-300'>Resume</button>
                 </a>
             </ul>
@@ -73,7 +73,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                 ))}
-                <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume.pdf' onClick={toggleNav}>
+                <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume-devops-engineer.pdf' onClick={toggleNav}>
                     <button className='mt-4 text-white bg-accentDeep hover:bg-accent rounded-lg px-6 py-3 duration-300'>Download Resume</button>
                 </a>
             </ul>

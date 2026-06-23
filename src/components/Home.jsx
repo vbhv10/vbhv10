@@ -52,7 +52,7 @@ const Home = () => {
                         </div>
 
                         <div className='flex flex-wrap items-center gap-3 mt-8'>
-                            <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume.pdf'>
+                            <a download='VaibhavMahajan_Resume.pdf' href='/files/Vaibhav_Mahajan_Resume-devops-engineer.pdf'>
                                 <button className='flex items-center text-white bg-accentDeep hover:bg-accent rounded-lg px-6 py-3 duration-300'>
                                     Download Resume <BsDownload className='ml-2' />
                                 </button>
